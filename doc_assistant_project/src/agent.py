@@ -47,7 +47,7 @@ class AgentState(TypedDict):
     user_id: Optional[str]
 
     # TODO: Modify actions_taken to use an operator.add reducer
-    actions_taken: Annotated[List[str]]
+    actions_taken: Annotated[List[str], operator.add]
 
 
 def invoke_react_agent(response_schema: type[BaseModel], messages: List[BaseMessage], llm, tools) -> (Dict[str, Any], List[str]):
@@ -276,6 +276,8 @@ def create_workflow(llm, tools):
         workflow.add_edge("update_memory", END)
 
         checkpointer = InMemorySaver()
+
+        
 
         # TODO Modify the return values below by adding a checkpointer with InMemorySaver
         return workflow.compile(
