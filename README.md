@@ -24,12 +24,12 @@ Built-in support for multi-message histories
 
 Graph Overview
 ┌─────────────────┐
-│  classify_intent │
+│  classify_intent│
 └─────────┬───────┘
           │
           ▼
  ┌──────────────┬──────────────────────┬──────────────────────┐
- │   qa_agent   │ summarization_agent  │ calculation_agent     │
+ │   qa_agent   │ summarization_agent  │ calculation_agent    │
  └──────────────┴──────────────────────┴──────────────────────┘
           │
           ▼
@@ -159,7 +159,7 @@ Provides continuity across turns.
 
 
 4. Example conversations :
-a.  Input message : Multiply 7*890
+a.  Input message : **Multiply 7*890**
 
     🤖 Assistant: The result of multiplying 7 by 890 is 6,230.
 
