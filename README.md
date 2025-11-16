@@ -6,7 +6,7 @@ It also maintains persistent memory and conversation summaries using checkpointe
 
 1. System Architecture
 
-The assistant follows a multi-agent graph design powered by LangGraph.
+The assistant follows a multi-agent ggiraph design powered by LangGraph.
 
 Why LangGraph?
 
@@ -156,3 +156,51 @@ Returns:
     - active_documents
 
 Provides continuity across turns.
+
+
+4. Example conversations :
+a.  Input message : Multiply 7*890
+
+    🤖 Assistant: The result of multiplying 7 by 890 is 6,230.
+
+    INTENT: calculation
+
+    TOOLS USED: calculator
+
+    CONVERSATION SUMMARY: The user requested the multiplication of 7 by 890. The calculation was performed, resulting in 6,230.
+
+b.  Input Message : Summarize doc_id INV-002
+    Assistant: **Summary of Document INV-002:**
+
+    - **Invoice Number:** 12346
+    - **Date:** February 20, 2024
+    - **Client:** TechStart Inc.
+    - **Products and Services:**
+    - Enterprise License (Annual): $50,000
+    - Implementation Services: $15,000
+    - Training Package: $5,000
+    - **Financial Details:**
+    - **Subtotal:** $70,000
+    - **Discount:** 10% ($7,000)
+    - **Tax:** 10% ($6,300)
+    - **Total Due:** $69,300
+    - **Payment Terms:** Net 45 days
+
+    This invoice outlines the purchase of an enterprise license, implementation services, and a training package, with a total amount due of $69,300 after applying a discount and tax.
+
+    INTENT: summarization
+
+    TOOLS USED: calculator, document_reader
+
+    CONVERSATION SUMMARY: The user requested a multiplication of 7 by 890, which resulted in 6,230. Later, the user asked for a summary of document INV-002, which is an invoice for TechStart Inc. dated February 20, 2024. The invoice includes charges for an Enterprise License, Implementation Services, and a Training Package, with a subtotal of $70,000. A 10% discount and a 10% tax were applied, resulting in a total due of $69,300, with payment terms of net 45 days.
+
+
+c.  Input Message: What is the title of doc_id CLM-001?
+    🤖 Assistant: The title of document CLM-001 is "INSURANCE CLAIM FORM."
+
+    INTENT: qa
+
+    TOOLS USED: calculator, document_reader, document_reader
+
+    CONVERSATION SUMMARY: The user requested a multiplication calculation for 7*890, which resulted in 6,230. Later, the user asked for a summary of document INV-002, which is an invoice for TechStart Inc. dated February 20, 2024, with a total due of $69,300 after discounts and taxes. The invoice includes charges for an enterprise license, implementation services, and a training package. The user also inquired about the title of document CLM-001, which is an "INSURANCE CLAIM FORM" for a medical expense reimbursement claim by John Doe, totaling $2,450 and currently under review.
+

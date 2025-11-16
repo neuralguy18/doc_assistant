@@ -1,0 +1,26 @@
+[
+  {
+    "timestamp": "2025-11-17T03:19:29.445440",
+    "tool_name": "calculator",
+    "input": {
+      "expression": "7*890"
+    },
+    "output": "{'result': 6230}"
+  },
+  {
+    "timestamp": "2025-11-17T03:23:57.159681",
+    "tool_name": "document_reader",
+    "input": {
+      "doc_id": "INV-002"
+    },
+    "output": "{'found': True, 'doc_type': 'invoice'}"
+  },
+  {
+    "timestamp": "2025-11-17T03:27:49.799162",
+    "tool_name": "document_reader",
+    "input": {
+      "doc_id": "CLM-001"
+    },
+    "output": "{'found': True, 'doc_type': 'claim'}"
+  }
+]
