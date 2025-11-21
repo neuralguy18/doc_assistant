@@ -11,17 +11,14 @@ from langgraph.prebuilt import create_react_agent, tools_condition, ToolNode
 from langchain_core.messages import BaseMessage, HumanMessage, AIMessage, SystemMessage, ToolMessage
 import re
 import operator
-from schemas import (
+from src.schemas import (
     UserIntent, SessionState,
     AnswerResponse, SummarizationResponse, CalculationResponse, UpdateMemoryResponse
 )
-from prompts import get_intent_classification_prompt, get_chat_prompt_template, MEMORY_SUMMARY_PROMPT
+from src.prompts import get_intent_classification_prompt, get_chat_prompt_template, MEMORY_SUMMARY_PROMPT
 
 
-# TODO: The AgentState class is already implemented for you.  Study the
-# structure to understand how state flows through the LangGraph
-# workflow.  See README.md Task 2.1 for detailed explanations of
-# each property.
+
 class AgentState(TypedDict):
     """
     The agent state object
@@ -46,7 +43,7 @@ class AgentState(TypedDict):
     session_id: Optional[str]
     user_id: Optional[str]
 
-    # TODO: Modify actions_taken to use an operator.add reducer
+    # Add an operator.add reducer
     actions_taken: Annotated[List[str], operator.add]
 
 
@@ -67,9 +64,7 @@ def invoke_react_agent(response_schema: type[BaseModel], messages: List[BaseMess
     return result, tools_used
 
 
-# TODO: Implement the classify_intent function.
-# This function should classify the user's intent and set the next step in the workflow.
-# Refer to README.md Task 2.2
+
 def classify_intent(state: AgentState, config: RunnableConfig) -> AgentState:
     """
     Classify user intent and update next_step. Also records that this
@@ -138,7 +133,7 @@ def qa_agent(state: AgentState, config: RunnableConfig) -> AgentState:
     }
 
 
-# TODO: Implement the summarization_agent function. Refer to README.md Task 2.3
+
 def summarization_agent(state: AgentState, config: RunnableConfig) -> AgentState:
     """
     Handle summarization tasks and record the action.
@@ -174,7 +169,7 @@ def summarization_agent(state: AgentState, config: RunnableConfig) -> AgentState
     }
 
 
-# TODO: Implement the calculation_agent function. Refer to README.md Task 2.3
+
 def calculation_agent(state: AgentState, config: RunnableConfig) -> AgentState:
     """
     Handle calculation tasks and record the action.
@@ -210,7 +205,7 @@ def calculation_agent(state: AgentState, config: RunnableConfig) -> AgentState:
     }
 
 
-# TODO: Finish implementing the update_memory function. Refer to README.md Task 2.4
+
 def update_memory(state: AgentState, config: RunnableConfig) -> AgentState:
     """
     Update conversation memory and record the action.
@@ -241,7 +236,7 @@ def should_continue(state: AgentState) -> str:
         """Router function"""
         return state.get("next_step", "end")
 
-# TODO: Complete the create_workflow function. Refer to README.md Task 2.5
+
 def create_workflow(llm, tools):
         """
         Creates the LangGraph agents.
@@ -279,7 +274,7 @@ def create_workflow(llm, tools):
 
         
 
-        # TODO Modify the return values below by adding a checkpointer with InMemorySaver
+        
         return workflow.compile(checkpointer=checkpointer)
              #configurable={
                # "llm": llm,

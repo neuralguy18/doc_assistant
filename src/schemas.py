@@ -12,9 +12,7 @@ class DocumentChunk(BaseModel):
     relevance_score: float = Field(default=0.0, description="Relevance score for retrieval")
 
 
-# TODO: Implement the AnswerResponse schema for structured Q&A responses.
-# This schema should include fields for the question, answer, sources, confidence, and timestamp.
-# Refer to README.md Task 1.1 for detailed field requirements.
+
 class AnswerResponse(BaseModel):
     """Structured response for Q&A tasks"""
     question: str = Field(..., description="The original user question")
@@ -49,9 +47,7 @@ class UpdateMemoryResponse(BaseModel):
     document_ids: List[str] = Field(default_factory=lambda: list, description="List of documents ids that are relevant to the users last message")
 
 
-# TODO: Implement the UserIntent schema for intent classification.
-# This schema should include fields for intent_type, confidence, and reasoning.
-# Refer to README.md Task 1.2 for detailed field requirements.
+
 class UserIntent(BaseModel):
     """User intent classification"""
     intent_type: Literal["qa", "summarization", "calculation", "unknown"] = Field(

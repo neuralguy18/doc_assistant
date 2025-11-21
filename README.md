@@ -1,3 +1,17 @@
+---
+title: Document Assistant
+emoji: 📄
+colorFrom: blue
+colorTo: green
+sdk: streamlit
+sdk_version: "1.32.0"
+app_file: app.py
+pinned: false
+---
+
+
+
+
 Multi-Agent LangGraph Assistant With Memory, Tools, and Structured Output
 
 This project implements a production-grade multi-agent assistant using LangGraph, LangChain, Pydantic structured outputs, and custom document + calculator tools.

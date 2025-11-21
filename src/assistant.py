@@ -9,11 +9,11 @@ from langchain_openai import ChatOpenAI
 
 from dotenv import load_dotenv
 
-from schemas import SessionState
-from retrieval import SimulatedRetriever
-from tools import get_all_tools, ToolLogger
-from agent import create_workflow, AgentState
-from prompts import MEMORY_SUMMARY_PROMPT
+from src.schemas import SessionState
+from src.retrieval import SimulatedRetriever
+from src.tools import get_all_tools, ToolLogger
+from src.agent import create_workflow, AgentState
+from src.prompts import MEMORY_SUMMARY_PROMPT
 
 load_dotenv()
 
@@ -119,8 +119,7 @@ class DocumentAssistant:
     def process_message(self, user_input: str) -> Dict[str, Any]:
         """Process a user message using the LangGraph workflow."""
 
-#TODO: Complete the config dictionary to set the thread_ud, llm, and tools to the workflow
-        # Refer to README.md Task 2.6 for details
+
         config = {
             "configurable": {
                 "thread_id": self.current_session.session_id,# TODO: Set this to the session id of the current sessions

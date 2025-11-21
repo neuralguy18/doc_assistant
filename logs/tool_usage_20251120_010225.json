@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": "2025-11-20T01:02:55.396080",
+    "tool_name": "document_reader",
+    "input": {
+      "doc_id": "INV-002"
+    },
+    "output": "{'found': True, 'doc_type': 'invoice'}"
+  }
+]

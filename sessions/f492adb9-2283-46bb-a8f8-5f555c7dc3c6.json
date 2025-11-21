@@ -1,0 +1,347 @@
+{
+  "session_id": "f492adb9-2283-46bb-a8f8-5f555c7dc3c6",
+  "user_id": "user123",
+  "conversation_history": [
+    {
+      "user_input": "Summarize doc_id INV-002",
+      "messages": [
+        {
+          "content": "You are an expert document summarizer specializing in financial and healthcare documents.\n\nYour approach:\n- Extract key information and main points\n- Organize summaries logically\n- Highlight important numbers, dates, and parties\n- Keep summaries concise but comprehensive\n\nGuidelines:\n1. First search for and read the relevant documents\n2. Structure summaries with clear sections\n3. Include document IDs in your summary\n4. Focus on actionable information\n",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "system",
+          "name": null,
+          "id": "ac50b25b-68fd-41d7-88c0-241f2514c9c2"
+        },
+        {
+          "content": "Summarize doc_id INV-002",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "human",
+          "name": null,
+          "id": "b836f522-4d9f-40ab-a821-1b9f0adcc460",
+          "example": false
+        },
+        {
+          "content": "",
+          "additional_kwargs": {
+            "tool_calls": [
+              {
+                "id": "call_SLcUkjAiQWViy5Xd3VXseBbn",
+                "function": {
+                  "arguments": "{\"doc_id\":\"INV-002\"}",
+                  "name": "document_reader"
+                },
+                "type": "function"
+              }
+            ],
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 17,
+              "prompt_tokens": 668,
+              "total_tokens": 685,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "model_name": "gpt-4o-2024-08-06",
+            "system_fingerprint": "fp_c98e05ca17",
+            "id": "chatcmpl-Cdi8we1YapWaOyl8OZ3dCSiOt5zAz",
+            "service_tier": "default",
+            "finish_reason": "tool_calls",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": null,
+          "id": "run--9f8bf868-2a43-4dc4-a350-896d53a418a2-0",
+          "example": false,
+          "tool_calls": [
+            {
+              "name": "document_reader",
+              "args": {
+                "doc_id": "INV-002"
+              },
+              "id": "call_SLcUkjAiQWViy5Xd3VXseBbn",
+              "type": "tool_call"
+            }
+          ],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 668,
+            "output_tokens": 17,
+            "total_tokens": 685,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 0
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        },
+        {
+          "content": "Document INV-002:\nAmount: $69,300.00\n\n\n                Invoice #12346\n                Date: 2024-02-20\n                Client: TechStart Inc.\n\n                Products:\n                - Enterprise License (Annual): $50,000\n                - Implementation Services: $15,000\n                - Training Package: $5,000\n\n                Subtotal: $70,000\n                Discount (10%): -$7,000\n                Tax (10%): $6,300\n                Total Due: $69,300\n\n                Payment Terms: Net 45 days\n                ",
+          "additional_kwargs": {},
+          "response_metadata": {},
+          "type": "tool",
+          "name": "document_reader",
+          "id": "b73a536f-417d-4458-923e-60a7a04126bf",
+          "tool_call_id": "call_SLcUkjAiQWViy5Xd3VXseBbn",
+          "artifact": null,
+          "status": "success"
+        },
+        {
+          "content": "### Summary of Document INV-002\n\n**Invoice Details:**\n- **Invoice Number:** 12346\n- **Date:** February 20, 2024\n- **Client:** TechStart Inc.\n\n**Products and Services:**\n- **Enterprise License (Annual):** $50,000\n- **Implementation Services:** $15,000\n- **Training Package:** $5,000\n\n**Financial Breakdown:**\n- **Subtotal:** $70,000\n- **Discount (10%):** -$7,000\n- **Tax (10%):** $6,300\n- **Total Due:** $69,300\n\n**Payment Terms:**\n- **Net 45 days**\n\nThis invoice outlines the purchase of an enterprise license, implementation services, and a training package, with a total amount due of $69,300 after applying a discount and tax. Payment is expected within 45 days.",
+          "additional_kwargs": {
+            "refusal": null
+          },
+          "response_metadata": {
+            "token_usage": {
+              "completion_tokens": 188,
+              "prompt_tokens": 817,
+              "total_tokens": 1005,
+              "completion_tokens_details": {
+                "accepted_prediction_tokens": 0,
+                "audio_tokens": 0,
+                "reasoning_tokens": 0,
+                "rejected_prediction_tokens": 0
+              },
+              "prompt_tokens_details": {
+                "audio_tokens": 0,
+                "cached_tokens": 0
+              }
+            },
+            "model_name": "gpt-4o-2024-08-06",
+            "system_fingerprint": "fp_c98e05ca17",
+            "id": "chatcmpl-Cdi8zjCEUuI4AIlHHhdaE5ogjUln5",
+            "service_tier": "default",
+            "finish_reason": "stop",
+            "logprobs": null
+          },
+          "type": "ai",
+          "name": null,
+          "id": "run--a8da3f2c-5270-46f8-92d1-caf8ffb107f3-0",
+          "example": false,
+          "tool_calls": [],
+          "invalid_tool_calls": [],
+          "usage_metadata": {
+            "input_tokens": 817,
+            "output_tokens": 188,
+            "total_tokens": 1005,
+            "input_token_details": {
+              "audio": 0,
+              "cache_read": 0
+            },
+            "output_token_details": {
+              "audio": 0,
+              "reasoning": 0
+            }
+          }
+        }
+      ],
+      "intent": {
+        "intent_type": "summarization",
+        "confidence": 0.95,
+        "reasoning": "The user explicitly requests a summary of a document identified by 'doc_id INV-002'. This aligns with the 'summarization' category, as the user is asking for key points or a condensed version of the document content. There is no indication of a need for calculations or a question about the document, making 'summarization' the most fitting classification."
+      },
+      "next_step": "end",
+      "conversation_summary": "The conversation involved summarizing an invoice document (INV-002) for TechStart Inc. The invoice, dated February 20, 2024, includes charges for an enterprise license, implementation services, and a training package, totaling $69,300 after a 10% discount and 10% tax. Payment terms are net 45 days.",
+      "active_documents": [
+        "INV-002"
+      ],
+      "current_response": {
+        "messages": [
+          {
+            "content": "You are an expert document summarizer specializing in financial and healthcare documents.\n\nYour approach:\n- Extract key information and main points\n- Organize summaries logically\n- Highlight important numbers, dates, and parties\n- Keep summaries concise but comprehensive\n\nGuidelines:\n1. First search for and read the relevant documents\n2. Structure summaries with clear sections\n3. Include document IDs in your summary\n4. Focus on actionable information\n",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "type": "system",
+            "name": null,
+            "id": "ac50b25b-68fd-41d7-88c0-241f2514c9c2"
+          },
+          {
+            "content": "Summarize doc_id INV-002",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "type": "human",
+            "name": null,
+            "id": "b836f522-4d9f-40ab-a821-1b9f0adcc460",
+            "example": false
+          },
+          {
+            "content": "",
+            "additional_kwargs": {
+              "tool_calls": [
+                {
+                  "id": "call_SLcUkjAiQWViy5Xd3VXseBbn",
+                  "function": {
+                    "arguments": "{\"doc_id\":\"INV-002\"}",
+                    "name": "document_reader"
+                  },
+                  "type": "function"
+                }
+              ],
+              "refusal": null
+            },
+            "response_metadata": {
+              "token_usage": {
+                "completion_tokens": 17,
+                "prompt_tokens": 668,
+                "total_tokens": 685,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": 0,
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0,
+                  "rejected_prediction_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "model_name": "gpt-4o-2024-08-06",
+              "system_fingerprint": "fp_c98e05ca17",
+              "id": "chatcmpl-Cdi8we1YapWaOyl8OZ3dCSiOt5zAz",
+              "service_tier": "default",
+              "finish_reason": "tool_calls",
+              "logprobs": null
+            },
+            "type": "ai",
+            "name": null,
+            "id": "run--9f8bf868-2a43-4dc4-a350-896d53a418a2-0",
+            "example": false,
+            "tool_calls": [
+              {
+                "name": "document_reader",
+                "args": {
+                  "doc_id": "INV-002"
+                },
+                "id": "call_SLcUkjAiQWViy5Xd3VXseBbn",
+                "type": "tool_call"
+              }
+            ],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "input_tokens": 668,
+              "output_tokens": 17,
+              "total_tokens": 685,
+              "input_token_details": {
+                "audio": 0,
+                "cache_read": 0
+              },
+              "output_token_details": {
+                "audio": 0,
+                "reasoning": 0
+              }
+            }
+          },
+          {
+            "content": "Document INV-002:\nAmount: $69,300.00\n\n\n                Invoice #12346\n                Date: 2024-02-20\n                Client: TechStart Inc.\n\n                Products:\n                - Enterprise License (Annual): $50,000\n                - Implementation Services: $15,000\n                - Training Package: $5,000\n\n                Subtotal: $70,000\n                Discount (10%): -$7,000\n                Tax (10%): $6,300\n                Total Due: $69,300\n\n                Payment Terms: Net 45 days\n                ",
+            "additional_kwargs": {},
+            "response_metadata": {},
+            "type": "tool",
+            "name": "document_reader",
+            "id": "b73a536f-417d-4458-923e-60a7a04126bf",
+            "tool_call_id": "call_SLcUkjAiQWViy5Xd3VXseBbn",
+            "artifact": null,
+            "status": "success"
+          },
+          {
+            "content": "### Summary of Document INV-002\n\n**Invoice Details:**\n- **Invoice Number:** 12346\n- **Date:** February 20, 2024\n- **Client:** TechStart Inc.\n\n**Products and Services:**\n- **Enterprise License (Annual):** $50,000\n- **Implementation Services:** $15,000\n- **Training Package:** $5,000\n\n**Financial Breakdown:**\n- **Subtotal:** $70,000\n- **Discount (10%):** -$7,000\n- **Tax (10%):** $6,300\n- **Total Due:** $69,300\n\n**Payment Terms:**\n- **Net 45 days**\n\nThis invoice outlines the purchase of an enterprise license, implementation services, and a training package, with a total amount due of $69,300 after applying a discount and tax. Payment is expected within 45 days.",
+            "additional_kwargs": {
+              "refusal": null
+            },
+            "response_metadata": {
+              "token_usage": {
+                "completion_tokens": 188,
+                "prompt_tokens": 817,
+                "total_tokens": 1005,
+                "completion_tokens_details": {
+                  "accepted_prediction_tokens": 0,
+                  "audio_tokens": 0,
+                  "reasoning_tokens": 0,
+                  "rejected_prediction_tokens": 0
+                },
+                "prompt_tokens_details": {
+                  "audio_tokens": 0,
+                  "cached_tokens": 0
+                }
+              },
+              "model_name": "gpt-4o-2024-08-06",
+              "system_fingerprint": "fp_c98e05ca17",
+              "id": "chatcmpl-Cdi8zjCEUuI4AIlHHhdaE5ogjUln5",
+              "service_tier": "default",
+              "finish_reason": "stop",
+              "logprobs": null
+            },
+            "type": "ai",
+            "name": null,
+            "id": "run--a8da3f2c-5270-46f8-92d1-caf8ffb107f3-0",
+            "example": false,
+            "tool_calls": [],
+            "invalid_tool_calls": [],
+            "usage_metadata": {
+              "input_tokens": 817,
+              "output_tokens": 188,
+              "total_tokens": 1005,
+              "input_token_details": {
+                "audio": 0,
+                "cache_read": 0
+              },
+              "output_token_details": {
+                "audio": 0,
+                "reasoning": 0
+              }
+            }
+          }
+        ],
+        "structured_response": {
+          "original_length": 474,
+          "summary": "This invoice outlines the purchase of an enterprise license, implementation services, and a training package, with a total amount due of $69,300 after applying a discount and tax. Payment is expected within 45 days.",
+          "key_points": [
+            "Invoice Number: 12346",
+            "Date: February 20, 2024",
+            "Client: TechStart Inc.",
+            "Enterprise License (Annual): $50,000",
+            "Implementation Services: $15,000",
+            "Training Package: $5,000",
+            "Subtotal: $70,000",
+            "Discount (10%): -$7,000",
+            "Tax (10%): $6,300",
+            "Total Due: $69,300",
+            "Payment Terms: Net 45 days"
+          ],
+          "document_ids": [
+            "INV-002"
+          ],
+          "timestamp": "2024-02-20T00:00:00+00:00"
+        }
+      },
+      "tools_used": [
+        "document_reader"
+      ],
+      "session_id": "f492adb9-2283-46bb-a8f8-5f555c7dc3c6",
+      "user_id": "user123",
+      "actions_taken": [
+        "classify_intent",
+        "summarization_agent",
+        "update_memory"
+      ]
+    }
+  ],
+  "document_context": [
+    "INV-002"
+  ],
+  "created_at": "2025-11-20T00:58:31.699406",
+  "last_updated": "2025-11-20T00:58:48.586391"
+}
